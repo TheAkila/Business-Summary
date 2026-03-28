@@ -1,0 +1,1678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Burlington Cannabis Market Intelligence Report — MontKailash Cannabis</title>
+<style>
+  :root {
+    --green: #2D6A4F;
+    --green-light: #52B788;
+    --green-pale: #D8F3DC;
+    --green-mid: #40916C;
+    --gold: #B7791F;
+    --gold-light: #FAF0CA;
+    --dark: #1B1B1B;
+    --mid: #4A4A4A;
+    --light: #F7F7F7;
+    --border: #DDEBD5;
+    --white: #FFFFFF;
+    --red: #C53030;
+    --blue: #2B6CB0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 13px;
+    color: var(--dark);
+    background: var(--light);
+    line-height: 1.6;
+  }
+
+  /* COVER PAGE */
+  .cover {
+    background: linear-gradient(135deg, #1B4332 0%, #2D6A4F 50%, #40916C 100%);
+    color: white;
+    padding: 80px 60px;
+    min-height: 300px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+  }
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: 40%;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+  .cover-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #B7E4C7;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+  }
+  .cover h1 {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 12px;
+    max-width: 700px;
+  }
+  .cover .subtitle {
+    font-size: 16px;
+    color: #B7E4C7;
+    margin-bottom: 32px;
+    max-width: 600px;
+  }
+  .cover-meta {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 32px;
+  }
+  .cover-meta-item label {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 2px;
+  }
+  .cover-meta-item span {
+    font-size: 14px;
+    font-weight: 600;
+    color: #D8F3DC;
+  }
+
+  /* LAYOUT */
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 30px; }
+  .section { padding: 40px 0 20px; border-bottom: 1px solid var(--border); }
+  .section:last-child { border-bottom: none; }
+
+  /* SECTION HEADERS */
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .section-num {
+    background: var(--green);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .section-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--green);
+  }
+  h2 { font-size: 16px; font-weight: 700; color: var(--green-mid); margin: 20px 0 10px; }
+  h3 { font-size: 14px; font-weight: 600; color: var(--mid); margin: 14px 0 6px; }
+
+  p { margin-bottom: 10px; color: var(--mid); }
+  ul { margin: 6px 0 12px 18px; }
+  ul li { margin-bottom: 4px; color: var(--mid); }
+
+  /* ASSUMPTION BOX */
+  .note-box {
+    background: var(--gold-light);
+    border-left: 4px solid var(--gold);
+    border-radius: 0 6px 6px 0;
+    padding: 12px 16px;
+    margin-bottom: 18px;
+    font-size: 12px;
+    color: #744210;
+  }
+  .note-box strong { color: #92400E; }
+
+  .info-box {
+    background: #EBF8FF;
+    border-left: 4px solid var(--blue);
+    border-radius: 0 6px 6px 0;
+    padding: 12px 16px;
+    margin-bottom: 18px;
+    font-size: 12px;
+    color: #2C5282;
+  }
+
+  /* STAT CARDS */
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .stat-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  }
+  .stat-card .num {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--green);
+    display: block;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .stat-card .label {
+    font-size: 11px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* TABLES */
+  .table-wrap { overflow-x: auto; margin-bottom: 20px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+  thead tr {
+    background: var(--green);
+    color: white;
+  }
+  thead th {
+    padding: 10px 12px;
+    text-align: left;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+  }
+  tbody tr:nth-child(even) { background: #F9FEFB; }
+  tbody tr:hover { background: var(--green-pale); }
+  tbody td {
+    padding: 9px 12px;
+    border-bottom: 1px solid #EEF7F0;
+    vertical-align: top;
+  }
+  .tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .tag-ind { background: #EBF8FF; color: #2B6CB0; }
+  .tag-corp { background: #FFF5F5; color: #C53030; }
+  .tag-chain { background: #FFFFF0; color: #744210; }
+  .tag-sale { background: #FFF5F5; color: #C53030; }
+  .tag-new { background: var(--green-pale); color: var(--green); }
+  .tag-hot { background: #FFFAF0; color: #DD6B20; }
+
+  /* BRAND INSIGHT CARDS */
+  .brand-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  .brand-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  }
+  .brand-card h3 {
+    color: var(--green);
+    margin: 0 0 6px;
+    font-size: 14px;
+  }
+  .brand-card .brand-cat {
+    font-size: 10px;
+    text-transform: uppercase;
+    color: #888;
+    letter-spacing: 0.8px;
+    margin-bottom: 8px;
+  }
+  .brand-card p {
+    font-size: 12px;
+    margin: 0;
+  }
+
+  /* PRICE TABLE */
+  .price-tag {
+    font-weight: 700;
+    color: var(--green-mid);
+  }
+  .price-sale {
+    font-weight: 700;
+    color: var(--red);
+  }
+
+  /* RECOMMENDATION BLOCK */
+  .rec-block {
+    background: white;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--green);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 18px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .rec-block .rec-title {
+    font-weight: 700;
+    color: var(--green);
+    font-size: 13px;
+    margin-bottom: 5px;
+  }
+  .rec-block p { font-size: 12px; margin: 0; }
+
+  /* MARKET TREND BARS */
+  .trend-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+  .trend-label { min-width: 140px; font-size: 12px; color: var(--mid); }
+  .trend-bar-wrap { flex: 1; background: #EEF7EE; border-radius: 4px; height: 14px; }
+  .trend-bar { height: 14px; border-radius: 4px; background: var(--green-light); }
+  .trend-pct { min-width: 40px; font-size: 12px; font-weight: 700; color: var(--green); text-align: right; }
+
+  /* FOOTER */
+  .report-footer {
+    background: var(--dark);
+    color: #888;
+    padding: 24px 30px;
+    font-size: 11px;
+    margin-top: 40px;
+    text-align: center;
+  }
+  .report-footer strong { color: #ccc; }
+
+  /* TOC */
+  .toc {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 24px 0;
+  }
+  .toc-title { font-size: 14px; font-weight: 700; color: var(--green); margin-bottom: 12px; }
+  .toc-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 0;
+    border-bottom: 1px dotted #ddd;
+    font-size: 12px;
+    color: var(--mid);
+  }
+  .toc-item:last-child { border-bottom: none; }
+  .toc-num { color: var(--green); font-weight: 700; margin-right: 8px; }
+
+  .divider { border: none; border-top: 2px solid var(--border); margin: 32px 0; }
+
+  .highlight { background: var(--green-pale); padding: 2px 6px; border-radius: 4px; font-weight: 600; color: var(--green); }
+
+  @media print {
+    body { font-size: 11px; }
+    .cover { padding: 50px 40px; }
+    .section { padding: 24px 0 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="container">
+    <div class="cover-badge">Confidential — Market Intelligence Report</div>
+    <h1>Burlington, Ontario<br>Cannabis Market Analysis</h1>
+    <div class="subtitle">Competitive landscape, store directory, product intelligence, and strategic recommendations for MontKailash Cannabis — 35 km market radius.</div>
+    <div class="cover-meta">
+      <div class="cover-meta-item"><label>Prepared For</label><span>MontKailash Cannabis</span></div>
+      <div class="cover-meta-item"><label>Target Market</label><span>Burlington, ON + 35 km</span></div>
+      <div class="cover-meta-item"><label>Report Date</label><span>March 28, 2026</span></div>
+      <div class="cover-meta-item"><label>Data Sources</label><span>OCS, HiBuddy, Weedmaps, Leafly, Reddit</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+
+  <!-- TOC -->
+  <div class="toc">
+    <div class="toc-title">Table of Contents</div>
+    <div class="toc-item"><span><span class="toc-num">1.</span> Market Overview &amp; Store Count</span></div>
+    <div class="toc-item"><span><span class="toc-num">2.</span> Store Directory (Burlington Core)</span></div>
+    <div class="toc-item"><span><span class="toc-num">3.</span> Surrounding Area Stores (35 km Radius)</span></div>
+    <div class="toc-item"><span><span class="toc-num">4.</span> Product Inventory &amp; Pricing Intelligence</span></div>
+    <div class="toc-item"><span><span class="toc-num">5.</span> HiBuddy &amp; Platform Comparison</span></div>
+    <div class="toc-item"><span><span class="toc-num">6.</span> Business Analytics Summary</span></div>
+    <div class="toc-item"><span><span class="toc-num">7.</span> Upcoming OCS Products &amp; Trends</span></div>
+    <div class="toc-item"><span><span class="toc-num">8.</span> Reddit &amp; Community Sentiment</span></div>
+    <div class="toc-item"><span><span class="toc-num">9.</span> Strategic Recommendations for MontKailash</span></div>
+    <div class="toc-item"><span><span class="toc-num">10.</span> Assumptions &amp; Methodology</span></div>
+  </div>
+
+  <!-- ===== SECTION 1 ===== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">1</div>
+      <div class="section-title">Market Overview &amp; Store Count</div>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-card"><span class="num">20+</span><span class="label">Burlington Stores</span></div>
+      <div class="stat-card"><span class="num">~50–60</span><span class="label">Within 35 km</span></div>
+      <div class="stat-card"><span class="num">$2.15B</span><span class="label">Ontario 2024 Sales</span></div>
+      <div class="stat-card"><span class="num">1,720+</span><span class="label">Ontario Stores</span></div>
+      <div class="stat-card"><span class="num">1,500+</span><span class="label">OCS Retail Partners</span></div>
+    </div>
+
+    <div class="note-box">
+      <strong>Assumption Note:</strong> Exact phone numbers and owner details for some stores are not publicly disclosed under Ontario privacy norms. Ownership details for corporate chain locations (High Tide / Canna Cabana, One Plant, Spiritleaf, Hunny Pot) are available via public filings. Independent stores typically do not publish owner names publicly. Where details are not publicly available, this is noted clearly.
+    </div>
+
+    <p>Burlington, Ontario is a mature, competitive cannabis retail market. The city opted into cannabis retail in January 2019, with the first stores opening April 1, 2019. As of early 2026, Burlington has accumulated over 20 AGCO-licensed stores within city limits. The 35 km radius extends to include parts of Hamilton, Oakville (notably no stores — opted out), Mississauga, Brampton, and Milton, bringing the total competitive landscape to approximately 50–60 licensed stores.</p>
+
+    <p>Ontario as a whole generated <strong>$2.15 billion in legal cannabis sales in 2024</strong>, across approximately 1,720 authorized stores, making it Canada's largest cannabis retail market. The Burlington submarket reflects broader Ontario trends: intensifying competition, price compression on commodity flower, and growth in premium and infused product formats.</p>
+
+    <h2>Market Dynamics</h2>
+    <ul>
+      <li><strong>Oakville Effect:</strong> Oakville remains opted-out, pushing a significant customer base towards Burlington's western-edge stores (Spiritleaf Fairview, Buds House, Sweet Releafs).</li>
+      <li><strong>Corporate vs. Independent:</strong> Burlington has a roughly 50/50 split between corporate chain stores (Canna Cabana, One Plant, Hunny Pot, Spiritleaf) and independent operators.</li>
+      <li><strong>New Entry — Canna Cabana (2025):</strong> High Tide opened a second Burlington location at 3221 Appleby Line in August 2025, intensifying competition in the north end.</li>
+      <li><strong>Price Wars:</strong> Value brands (SHRED, Good Supply, Super Toast) dominate volume. Premium craft is growing but remains a smaller share.</li>
+    </ul>
+  </div>
+
+  <!-- ===== SECTION 2 ===== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">2</div>
+      <div class="section-title">Store Directory — Burlington Core</div>
+    </div>
+
+    <div class="note-box">
+      <strong>Ownership Note:</strong> Ontario's AGCO authorizes stores but does not publish owner names in a public-facing directory. Owner details listed below are sourced from public press releases, corporate filings (for chains), and publicly available business registration data. Where ownership is not verifiable, "Not Publicly Disclosed" is noted.
+    </div>
+
+    <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Store Name</th>
+          <th>Address</th>
+          <th>Phone</th>
+          <th>Hours of Operation</th>
+          <th>Type</th>
+          <th>Owner / Operator</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td><strong>PEPE Cannabis Store</strong></td>
+          <td>892 Brant St, Burlington, ON L7R 2J5</td>
+          <td>905-333-5373</td>
+          <td>Mon–Sun: 9:00 AM – 10:00 PM</td>
+          <td><span class="tag tag-ind">Independent</span></td>
+          <td>Not Publicly Disclosed (Independent entrepreneurs)</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><strong>The Hunny Pot Cannabis Co. (Guelph Line)</strong></td>
+          <td>1505 Guelph Line, Burlington, ON L7P 3B6</td>
+          <td>Not publicly listed</td>
+          <td>Mon–Sun: 9:00 AM – 10:00 PM</td>
+          <td><span class="tag tag-chain">Chain</span></td>
+          <td>The Hunny Pot Inc. (Multiple corporate owners)</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td><strong>The Hunny Pot Cannabis Co. (Appleby)</strong></td>
+          <td>2000 Appleby Line, Burlington, ON</td>
+          <td>Not publicly listed</td>
+          <td>Mon–Sun: 9:00 AM – 10:00 PM</td>
+          <td><span class="tag tag-chain">Chain</span></td>
+          <td>The Hunny Pot Inc.</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td><strong>Relm Cannabis Co.</strong></td>
+          <td>103-4031 Fairview St, Burlington, ON L7L 2A4</td>
+          <td>Not publicly listed</td>
+          <td>Mon–Sun: 10:00 AM – 9:00 PM (reopened 2025–26)</td>
+          <td><span class="tag tag-ind">Independent</span></td>
+          <td>Not Publicly Disclosed</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td><strong>One Plant Burlington</strong></td>
+          <td>2025 Guelph Line, Burlington, ON</td>
+          <td>Not publicly listed</td>
+          <td>Mon–Sun: 9:00 AM – 10:00 PM</td>
+          <td><span class="tag tag-corp">Corporate</span></td>
+          <td>One Plant / Westleaf Inc. (Corporate chain)</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td><strong>Canna Cabana Burlington (Guelph Line)</strong></td>
+          <td>2400 Guelph Line, Burlington, ON L7P 4P2</td>
+          <td>Not publicly listed</td>
+          <td>Mon–Sun: 9:00 AM – 11:00 PM</td>
+          <td><span class="tag tag-corp">Corporate</span></td>
+          <td>High Tide Inc. (NASDAQ: HITI) — CEO Raj Grover</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td><strong>Canna Cabana Burlington (Appleby — New)</strong></td>
+          <td>3221 Appleby Line, Burlington, ON</td>
+          <td>Not publicly listed</td>
+          <td>Mon–Sun: 9:00 AM – 11:00 PM (Opened Aug 29, 2025)</td>
+          <td><span class="tag tag-corp">Corporate</span></td>
+          <td>High Tide Inc. (NASDAQ: HITI) — CEO Raj Grover</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td><strong>Spiritleaf Burlington (Woodview Place)</strong></td>
+          <td>Fairview St area, Burlington, ON (exact unit not publicly listed)</td>
+          <td>Not publicly listed</td>
+          <td>Mon–Sun: ~10:00 AM – 9:00 PM</td>
+          <td><span class="tag tag-chain">Chain</span></td>
+          <td>Spiritleaf / Inner Spirit Holdings (Franchise)</td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td><strong>The Farmhouse Cannabis Co.</strong></td>
+          <td>Appleby Line area, Burlington, ON</td>
+          <td>Not publicly listed</td>
+          <td>Mon–Sun: ~9:00 AM – 10:00 PM</td>
+          <td><span class="tag tag-ind">Independent</span></td>
+          <td>Not Publicly Disclosed (Community-focused indie)</td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td><strong>Burlington Cannabis Co.</strong></td>
+          <td>Burlington, ON (exact address not publicly listed)</td>
+          <td>Not publicly listed</td>
+          <td>Not publicly listed</td>
+          <td><span class="tag tag-ind">Independent</span></td>
+          <td>Not Publicly Disclosed</td>
+        </tr>
+        <tr>
+          <td>11</td>
+          <td><strong>Canada Buds</strong></td>
+          <td>1860 Appleby Line, Unit 11B, Burlington, ON</td>
+          <td>Not publicly listed</td>
+          <td>Not publicly listed</td>
+          <td><span class="tag tag-ind">Independent</span></td>
+          <td>Not Publicly Disclosed</td>
+        </tr>
+        <tr>
+          <td>12</td>
+          <td><strong>Sweet Releafs</strong></td>
+          <td>Burlington, ON (Lakeshore Rd area near Oakville border)</td>
+          <td>Not publicly listed</td>
+          <td>Mon–Fri: 10:00 AM – 9:00 PM; Sat: 10:00 AM – 9:00 PM; Sun: 11:00 AM – 7:00 PM</td>
+          <td><span class="tag tag-ind">Independent</span></td>
+          <td>Not Publicly Disclosed</td>
+        </tr>
+        <tr>
+          <td>13</td>
+          <td><strong>Corner Cannabis</strong></td>
+          <td>3007 New St, Burlington, ON L7R 1K3</td>
+          <td>Not publicly listed</td>
+          <td>Not publicly listed</td>
+          <td><span class="tag tag-ind">Independent</span></td>
+          <td>Not Publicly Disclosed</td>
+        </tr>
+        <tr>
+          <td>14</td>
+          <td><strong>Welcome Cannabis Burlington</strong></td>
+          <td>1401 Plains Rd E, Unit 5, Burlington, ON L7R 3P9</td>
+          <td>Not publicly listed</td>
+          <td>Not publicly listed</td>
+          <td><span class="tag tag-ind">Independent</span></td>
+          <td>Not Publicly Disclosed</td>
+        </tr>
+        <tr>
+          <td>15</td>
+          <td><strong>Friendly Stranger Burlington</strong></td>
+          <td>1025 Plains Rd E, Burlington, ON L7T 4K1</td>
+          <td>Not publicly listed</td>
+          <td>Not publicly listed</td>
+          <td><span class="tag tag-chain">Chain</span></td>
+          <td>Friendly Stranger Holdings Corp.</td>
+        </tr>
+        <tr>
+          <td>16</td>
+          <td><strong>Hidden Leaf Cannabis</strong></td>
+          <td>Burlington, ON (exact address not publicly listed)</td>
+          <td>Not publicly listed</td>
+          <td>Not publicly listed</td>
+          <td><span class="tag tag-ind">Independent</span></td>
+          <td>Not Publicly Disclosed</td>
+        </tr>
+        <tr>
+          <td>17</td>
+          <td><strong>Buds House</strong></td>
+          <td>Lakeshore Rd, Burlington, ON (near Oakville border)</td>
+          <td>Not publicly listed</td>
+          <td>Not publicly listed</td>
+          <td><span class="tag tag-ind">Independent</span></td>
+          <td>Not Publicly Disclosed</td>
+        </tr>
+        <tr>
+          <td>18</td>
+          <td><strong>The Spot Cannabis Co.</strong></td>
+          <td>Burlington, ON</td>
+          <td>Not publicly listed</td>
+          <td>Not publicly listed</td>
+          <td><span class="tag tag-ind">Independent</span></td>
+          <td>Not Publicly Disclosed</td>
+        </tr>
+        <tr>
+          <td>19</td>
+          <td><strong>Blazin Cannabis</strong></td>
+          <td>Burlington, ON</td>
+          <td>Not publicly listed</td>
+          <td>Not publicly listed</td>
+          <td><span class="tag tag-ind">Independent</span></td>
+          <td>Not Publicly Disclosed</td>
+        </tr>
+        <tr>
+          <td>20</td>
+          <td><strong>Bud Brothers Cannabis</strong></td>
+          <td>Burlington, ON</td>
+          <td>Not publicly listed</td>
+          <td>Not publicly listed</td>
+          <td><span class="tag tag-ind">Independent</span></td>
+          <td>Not Publicly Disclosed</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="info-box">
+      <strong>Note for Live Data Collection:</strong> Platforms for real-time phone/hours verification: Google Maps Business listings, each store's own website, OCS.ca store locator, and direct phone calls. Hours frequently change — HiBuddy.ca and Weedmaps.com are the most reliable for real-time operational hours. Daily checks are recommended for a continuously maintained dataset.
+    </div>
+  </div>
+
+  <!-- ===== SECTION 3 ===== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">3</div>
+      <div class="section-title">Surrounding Area Stores — 35 km Radius</div>
+    </div>
+
+    <p>The 35 km radius from Burlington city centre encompasses stores in Hamilton, Stoney Creek, Ancaster, Dundas, Milton, Oakville (no stores — opted out), Mississauga (southern fringe), and Grimsby. The table below covers key competitive stores in this ring.</p>
+
+    <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Store Name</th>
+          <th>City</th>
+          <th>Address</th>
+          <th>Approx. Distance</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Sessions Cannabis (Dundurn St)</strong></td>
+          <td>Hamilton</td>
+          <td>Dundurn St, Hamilton, ON</td>
+          <td>~12 km</td>
+          <td>Chain; high volume</td>
+        </tr>
+        <tr>
+          <td><strong>True North Cannabis (Hamilton)</strong></td>
+          <td>Hamilton</td>
+          <td>Hamilton, ON</td>
+          <td>~14 km</td>
+          <td>Chain; national presence</td>
+        </tr>
+        <tr>
+          <td><strong>Tokyo Smoke</strong></td>
+          <td>Hamilton</td>
+          <td>Hamilton, ON</td>
+          <td>~14 km</td>
+          <td>Lifestyle-focused chain</td>
+        </tr>
+        <tr>
+          <td><strong>420 Love (Main &amp; Gage)</strong></td>
+          <td>Hamilton</td>
+          <td>Main &amp; Gage, Hamilton, ON</td>
+          <td>~15 km</td>
+          <td>Independent</td>
+        </tr>
+        <tr>
+          <td><strong>AFFX Cannabis (Upper Paradise)</strong></td>
+          <td>Hamilton</td>
+          <td>Upper Paradise Rd, Hamilton, ON</td>
+          <td>~13 km</td>
+          <td>Independent</td>
+        </tr>
+        <tr>
+          <td><strong>AFFX Cannabis (Upper Centennial)</strong></td>
+          <td>Hamilton</td>
+          <td>Upper Centennial Pkwy, Hamilton, ON</td>
+          <td>~12 km</td>
+          <td>Independent</td>
+        </tr>
+        <tr>
+          <td><strong>Neku Cannabis (Upper James)</strong></td>
+          <td>Hamilton</td>
+          <td>Upper James St, Hamilton, ON</td>
+          <td>~14 km</td>
+          <td>Independent</td>
+        </tr>
+        <tr>
+          <td><strong>Mystic's Cannabis (King St E)</strong></td>
+          <td>Hamilton</td>
+          <td>King St E, Hamilton, ON</td>
+          <td>~14 km</td>
+          <td>Independent</td>
+        </tr>
+        <tr>
+          <td><strong>The Hunny Pot (40 Centennial Pkwy N)</strong></td>
+          <td>Hamilton</td>
+          <td>40 Centennial Pkwy N, Hamilton, ON</td>
+          <td>~12 km</td>
+          <td>Chain</td>
+        </tr>
+        <tr>
+          <td><strong>Sessions Cannabis (Stoney Creek)</strong></td>
+          <td>Stoney Creek</td>
+          <td>Stoney Creek, Hamilton, ON</td>
+          <td>~18 km</td>
+          <td>Chain</td>
+        </tr>
+        <tr>
+          <td><strong>Queen George Cannabis (Caroline St)</strong></td>
+          <td>Hamilton</td>
+          <td>Caroline St, Hamilton, ON</td>
+          <td>~13 km</td>
+          <td>Independent</td>
+        </tr>
+        <tr>
+          <td><strong>Highlife Ancaster</strong></td>
+          <td>Ancaster</td>
+          <td>Ancaster, ON</td>
+          <td>~20 km</td>
+          <td>Chain — Highlife brand</td>
+        </tr>
+        <tr>
+          <td><strong>The Woods Cannabis (Dundas W)</strong></td>
+          <td>Dundas/Hamilton</td>
+          <td>Dundas W, Hamilton area</td>
+          <td>~18 km</td>
+          <td>Independent</td>
+        </tr>
+        <tr>
+          <td><strong>Piffingtons Cannabis Co.</strong></td>
+          <td>Milton</td>
+          <td>Milton, ON</td>
+          <td>~25 km</td>
+          <td>Independent; Milton is opted-in</td>
+        </tr>
+        <tr>
+          <td><strong>Cannaco Cannabis</strong></td>
+          <td>Milton</td>
+          <td>547 Main St, Milton, ON L9T 3J2</td>
+          <td>~25 km</td>
+          <td>Independent</td>
+        </tr>
+        <tr>
+          <td><strong>TreeTop (Milton)</strong></td>
+          <td>Milton</td>
+          <td>Milton, ON</td>
+          <td>~26 km</td>
+          <td>Independent chain</td>
+        </tr>
+        <tr>
+          <td><strong>WE':) Stone Church</strong></td>
+          <td>Hamilton area</td>
+          <td>Stone Church Rd area</td>
+          <td>~15 km</td>
+          <td>Independent</td>
+        </tr>
+        <tr>
+          <td><strong>Sparkle Cannabis</strong></td>
+          <td>Hamilton/Stoney Creek area</td>
+          <td>Not publicly listed</td>
+          <td>~16 km</td>
+          <td>Independent</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="note-box">
+      <strong>Oakville Gap:</strong> Oakville opted out of cannabis retail and has zero licensed stores. This represents a significant untapped customer base — residents of west Oakville (Bronte, Glen Abbey) routinely cross into Burlington for cannabis. Burlington's south-end and lakefront stores (Sweet Releafs, Buds House, Spiritleaf Fairview) benefit directly from this gap. MontKailash should consider this when selecting a location.
+    </div>
+  </div>
+
+  <!-- ===== SECTION 4 ===== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">4</div>
+      <div class="section-title">Product Inventory &amp; Pricing Intelligence</div>
+    </div>
+
+    <p>All Ontario cannabis retailers source from the OCS (Ontario Cannabis Store), which acts as the sole provincial wholesaler. All products offered by any AGCO-licensed retailer were, by definition, listed with OCS. Pricing at retail is set by each store independently, though OCS's suggested retail pricing creates a de facto floor. Below is a representative pricing intelligence snapshot for key categories and products commonly stocked by Burlington-area stores, cross-referenced with HiBuddy.ca and store menus.</p>
+
+    <h2>Flower — Pricing by Tier</h2>
+    <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Brand</th>
+          <th>Size</th>
+          <th>Tier</th>
+          <th>Typical Retail (CAD)</th>
+          <th>Sale/Promo Price</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Pink Kush</strong></td>
+          <td>Pure Sunfarms</td>
+          <td>28g (Oz)</td>
+          <td>Value</td>
+          <td class="price-tag">$79.99 – $89.99</td>
+          <td class="price-sale">$74.99 (promo)</td>
+          <td>Top Ontario seller; consistent THC ~29%</td>
+        </tr>
+        <tr>
+          <td><strong>GMO Cookies</strong></td>
+          <td>Spinach</td>
+          <td>3.5g</td>
+          <td>Mid</td>
+          <td class="price-tag">$20.42 – $22.99</td>
+          <td class="price-sale">$17.99 (weekly deal)</td>
+          <td>High THC 28–34%; top volume SKU</td>
+        </tr>
+        <tr>
+          <td><strong>GMO Cookies</strong></td>
+          <td>Spinach</td>
+          <td>28g</td>
+          <td>Mid</td>
+          <td class="price-tag">$99.99 – $109.99</td>
+          <td class="price-sale">$89.99 (rotation)</td>
+          <td>Frequently on rotation sale</td>
+        </tr>
+        <tr>
+          <td><strong>Gnarberry</strong></td>
+          <td>SHRED</td>
+          <td>7g (milled)</td>
+          <td>Value</td>
+          <td class="price-tag">$28.22 – $30.99</td>
+          <td class="price-sale">$24.99</td>
+          <td>Pre-ground; popular budget option</td>
+        </tr>
+        <tr>
+          <td><strong>Organic Comatose</strong></td>
+          <td>1964 Supply Co</td>
+          <td>3.5g</td>
+          <td>Craft</td>
+          <td class="price-tag">$29.99 – $34.99</td>
+          <td>Rarely discounted</td>
+          <td>Certified organic; strong reviews</td>
+        </tr>
+        <tr>
+          <td><strong>Pink Kush</strong></td>
+          <td>Pure Sunfarms</td>
+          <td>3.5g</td>
+          <td>Value</td>
+          <td class="price-tag">$20.99 – $22.99</td>
+          <td class="price-sale">$18.99</td>
+          <td>Most accessible Pink Kush format</td>
+        </tr>
+        <tr>
+          <td><strong>Big Smallz</strong></td>
+          <td>Tenzo</td>
+          <td>14g</td>
+          <td>Value</td>
+          <td class="price-tag">$64.81 – $69.99</td>
+          <td class="price-sale">$59.99</td>
+          <td>HiBuddy popular; 4.1/5 stars</td>
+        </tr>
+        <tr>
+          <td><strong>Sgt. Pineapple</strong></td>
+          <td>Super Toast</td>
+          <td>7g</td>
+          <td>Value</td>
+          <td class="price-tag">$27.80 – $29.99</td>
+          <td class="price-sale">$24.99</td>
+          <td>Frequent promo; high velocity</td>
+        </tr>
+        <tr>
+          <td><strong>Oz (28g Smalls)</strong></td>
+          <td>No Biggie Just Smalls</td>
+          <td>28g</td>
+          <td>Budget</td>
+          <td class="price-tag">$105.95</td>
+          <td>Occasional deals</td>
+          <td>HiBuddy #1 popular; 75+ stores</td>
+        </tr>
+        <tr>
+          <td><strong>Kush Cookies</strong></td>
+          <td>3Saints</td>
+          <td>3.5g</td>
+          <td>Value</td>
+          <td class="price-tag">$20.17 – $22.99</td>
+          <td class="price-sale">$17.99</td>
+          <td>Top-10 Ontario; dense indica</td>
+        </tr>
+        <tr>
+          <td><strong>Tropic Thunder</strong></td>
+          <td>SHRED</td>
+          <td>7g (milled)</td>
+          <td>Value</td>
+          <td class="price-tag">$28.35 – $30.99</td>
+          <td class="price-sale">$24.99</td>
+          <td>Consistently carries good sell-through</td>
+        </tr>
+        <tr>
+          <td><strong>Animal Face</strong></td>
+          <td>Carmel Cannabis</td>
+          <td>3.5g</td>
+          <td>Craft/Premium</td>
+          <td class="price-tag">$39.99 – $44.99</td>
+          <td>Rarely discounted</td>
+          <td>"Best sativa in Ontario" per budtenders 2026</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2>Pre-Rolls — Pricing Snapshot</h2>
+    <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Brand</th>
+          <th>Format</th>
+          <th>Typical Retail</th>
+          <th>Promo Price</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Fuego Pre-Rolls (10-pack)</strong></td>
+          <td>Fuego</td>
+          <td>10 x 0.5g</td>
+          <td class="price-tag">$19.99 – $24.99</td>
+          <td class="price-sale">$17.99</td>
+          <td>High volume; non-infused</td>
+        </tr>
+        <tr>
+          <td><strong>Infused Pre-Roll (General Admission)</strong></td>
+          <td>General Admission</td>
+          <td>Infused 1g</td>
+          <td class="price-tag">$14.99 – $18.99</td>
+          <td class="price-sale">$12.99</td>
+          <td>#1 Ontario infused pre-roll brand 2025</td>
+        </tr>
+        <tr>
+          <td><strong>Jeeter Pre-Roll</strong></td>
+          <td>Jeeter</td>
+          <td>Infused</td>
+          <td class="price-tag">$12.99 – $16.99</td>
+          <td>Occasional</td>
+          <td>Premium; strong brand recognition</td>
+        </tr>
+        <tr>
+          <td><strong>Thumbs Up (multipack)</strong></td>
+          <td>Thumbs Up</td>
+          <td>Multi</td>
+          <td class="price-tag">$14.99 – $19.99</td>
+          <td class="price-sale">$12.99</td>
+          <td>Value; high units velocity</td>
+        </tr>
+        <tr>
+          <td><strong>Back Forty (infused)</strong></td>
+          <td>Back Forty</td>
+          <td>Infused single</td>
+          <td class="price-tag">$9.99 – $12.99</td>
+          <td class="price-sale">$8.99</td>
+          <td>Moved to #2 infused pre-roll in Ontario (2025)</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2>Vapes — Pricing Snapshot</h2>
+    <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Brand</th>
+          <th>Format</th>
+          <th>Typical Retail</th>
+          <th>Promo Price</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>510 Cart (various strains)</strong></td>
+          <td>Back Forty</td>
+          <td>510 Cart 1g</td>
+          <td class="price-tag">$24.99 – $34.99</td>
+          <td class="price-sale">$21.99</td>
+          <td>Consistent #1–2 Ontario vape brand</td>
+        </tr>
+        <tr>
+          <td><strong>Vape Cart</strong></td>
+          <td>General Admission</td>
+          <td>510 Cart 1g</td>
+          <td class="price-tag">$24.99 – $29.99</td>
+          <td class="price-sale">$21.99</td>
+          <td>Strong following; multiple flavours</td>
+        </tr>
+        <tr>
+          <td><strong>Sourz Vape (live resin)</strong></td>
+          <td>Spinach</td>
+          <td>510 Cart 1g</td>
+          <td class="price-tag">$29.99 – $34.99</td>
+          <td class="price-sale">$26.99</td>
+          <td>Fruity live resin; high demand</td>
+        </tr>
+        <tr>
+          <td><strong>BOXHOT Fatties Disposable</strong></td>
+          <td>BOXHOT / SHRED</td>
+          <td>All-in-one 2g</td>
+          <td class="price-tag">$34.99 – $44.99</td>
+          <td class="price-sale">$31.99</td>
+          <td>Premium dispos; postless design</td>
+        </tr>
+        <tr>
+          <td><strong>Tribal Live Resin 510</strong></td>
+          <td>Tribal</td>
+          <td>510 Cart 1g</td>
+          <td class="price-tag">$34.99 – $39.99</td>
+          <td>Rarely discounted</td>
+          <td>Premium craft vape; neon sunshine SKU trending</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2>Edibles — Pricing Snapshot</h2>
+    <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Brand</th>
+          <th>Format</th>
+          <th>Typical Retail</th>
+          <th>Promo Price</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Sourz Gummies</strong></td>
+          <td>Spinach</td>
+          <td>Gummies 10-pack, 10mg THC</td>
+          <td class="price-tag">$7.99 – $9.99</td>
+          <td class="price-sale">$6.99</td>
+          <td>Ontario #1 edible brand by units</td>
+        </tr>
+        <tr>
+          <td><strong>WYLD Gummies</strong></td>
+          <td>WYLD</td>
+          <td>Gummies 10-pack</td>
+          <td class="price-tag">$10.99 – $14.99</td>
+          <td class="price-sale">$9.99</td>
+          <td>Premium; CBD+THC versions popular</td>
+        </tr>
+        <tr>
+          <td><strong>Cherry Fast-Acting Tabs (THC+CBC)</strong></td>
+          <td>Various</td>
+          <td>10 x 10mg tabs</td>
+          <td class="price-tag">$14.99 – $19.99</td>
+          <td>New format (Jan 2026 OCS drop)</td>
+          <td>New Jan 2026; fast-acting; CBC included</td>
+        </tr>
+        <tr>
+          <td><strong>THC Beverage (10mg + Caffeine)</strong></td>
+          <td>Various / New</td>
+          <td>355 mL can</td>
+          <td class="price-tag">$5.99 – $8.99</td>
+          <td>—</td>
+          <td>March 2026 OCS launch; 30mg caffeine + 10mg THC</td>
+        </tr>
+        <tr>
+          <td><strong>Cannabis Tea (Olli)</strong></td>
+          <td>Olli</td>
+          <td>Rosin-infused tea bags</td>
+          <td class="price-tag">$7.99 – $9.99</td>
+          <td>—</td>
+          <td>Wellness segment; growing traction</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="info-box">
+      <strong>Promotional Cadence Observation:</strong> Based on HiBuddy.ca and store newsletters, Burlington-area stores typically run promotions on a weekly rotating basis. Corporate chains (Canna Cabana, One Plant) tend to run more systematic, brand-led promotions. Independent stores often run spontaneous daily deals or loyalty-based promotions. Sale periods are typically 3–7 days for weekly deals, or 2–4 weeks for seasonal/clearance events. Price change frequency for commodity flower (SHRED, Pure Sunfarms, Spinach) is roughly monthly at the OCS wholesale level, with retail stores adjusting within 1–2 weeks of a wholesale price change.
+    </div>
+
+    <h2>Stores with Known Ongoing Promotions</h2>
+    <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Store</th>
+          <th>Promotion Type</th>
+          <th>Details</th>
+          <th>Frequency</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>PEPE Cannabis</strong></td>
+          <td>Seniors Tuesday / Wellness Wednesday</td>
+          <td>10% off wellness/CBD products (Wed); seniors discount (Tue)</td>
+          <td>Ongoing / Weekly</td>
+        </tr>
+        <tr>
+          <td><strong>Canna Cabana</strong></td>
+          <td>Cabana Club / Deals of the Week</td>
+          <td>Loyalty program; rotating weekly specials on select SKUs</td>
+          <td>Weekly rotation</td>
+        </tr>
+        <tr>
+          <td><strong>One Plant</strong></td>
+          <td>Brand Spotlight Sales</td>
+          <td>Monthly featured brand promotions</td>
+          <td>Monthly</td>
+        </tr>
+        <tr>
+          <td><strong>Sweet Releafs</strong></td>
+          <td>First Responders Discount / Seniors Discount</td>
+          <td>Daily discounts for target groups</td>
+          <td>Ongoing</td>
+        </tr>
+        <tr>
+          <td><strong>The Hunny Pot</strong></td>
+          <td>Click &amp; Collect / Online-exclusive deals</td>
+          <td>Online order pricing sometimes lower than walk-in</td>
+          <td>Ongoing</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 5 ===== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">5</div>
+      <div class="section-title">HiBuddy.ca &amp; Platform Comparison</div>
+    </div>
+
+    <p>HiBuddy.ca is a Canadian price-comparison platform that aggregates live menus from government-licensed retailers. It allows consumers to compare prices across stores in real time. As of the March 2026 data pull, HiBuddy shows approximately 573 stores within 50 km of the Toronto/Burlington area. Key insights from HiBuddy and competing platforms are summarized below.</p>
+
+    <div class="brand-grid">
+      <div class="brand-card">
+        <h3>HiBuddy.ca</h3>
+        <div class="brand-cat">Price Aggregator</div>
+        <p>Most comprehensive Ontario price comparison tool. Shows real-time store inventory, unit pricing across formats, and consumer reviews. Burlington stores are all listed. Best source for live price tracking.</p>
+      </div>
+      <div class="brand-card">
+        <h3>Weedmaps</h3>
+        <div class="brand-cat">Directory + Menu Platform</div>
+        <p>Lists 93 dispensaries in the Burlington area (including greater radius). Shows hours, menus, and deals. Some listings are outdated — must cross-reference with live store calls.</p>
+      </div>
+      <div class="brand-card">
+        <h3>Leafly</h3>
+        <div class="brand-cat">Review + Discovery Platform</div>
+        <p>Strong for strain discovery and consumer reviews. Less reliable for real-time pricing. Good for understanding which products are resonating with consumers via star ratings and review content.</p>
+      </div>
+      <div class="brand-card">
+        <h3>OCS.ca Store Locator</h3>
+        <div class="brand-cat">Official Government Platform</div>
+        <p>Official source for authorized store status. Confirms which stores are AGCO-licensed. Does not provide pricing or real-time inventory — use for compliance verification only.</p>
+      </div>
+      <div class="brand-card">
+        <h3>Leafythings</h3>
+        <div class="brand-cat">Canadian Directory</div>
+        <p>Good for discovering store names and broad categories. Listings are not always current. Useful as a backup source for store identification.</p>
+      </div>
+      <div class="brand-card">
+        <h3>Reddit (r/TheOCS, r/Canadients)</h3>
+        <div class="brand-cat">Community Intelligence</div>
+        <p>Primary source of real consumer sentiment. Users actively review products, flag quality issues, and identify trending SKUs. High signal-to-noise ratio for premium/craft products.</p>
+      </div>
+    </div>
+
+    <h2>HiBuddy Trending Products (Burlington/GTA Region, March 2026)</h2>
+    <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Brand</th>
+          <th>Category</th>
+          <th>Rating (HiBuddy)</th>
+          <th># Stores</th>
+          <th>From Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Oz (28g Smalls)</strong></td>
+          <td>No Biggie Just Smalls</td>
+          <td>Flower</td>
+          <td>3.5 / 5 (17 reviews)</td>
+          <td>75</td>
+          <td class="price-tag">$105.95</td>
+        </tr>
+        <tr>
+          <td><strong>GMO Cookies</strong></td>
+          <td>Spinach</td>
+          <td>Flower</td>
+          <td>3.5 / 5 (23 reviews)</td>
+          <td>402</td>
+          <td class="price-tag">$15.94</td>
+        </tr>
+        <tr>
+          <td><strong>Big Smallz</strong></td>
+          <td>Tenzo</td>
+          <td>Flower</td>
+          <td>4.1 / 5 (41 reviews)</td>
+          <td>243</td>
+          <td class="price-tag">$64.81</td>
+        </tr>
+        <tr>
+          <td><strong>Organic Comatose</strong></td>
+          <td>1964 Supply Co</td>
+          <td>Flower</td>
+          <td>3.7 / 5 (47 reviews)</td>
+          <td>379</td>
+          <td class="price-tag">$6.96</td>
+        </tr>
+        <tr>
+          <td><strong>Pink Kush</strong></td>
+          <td>Pure Sunfarms</td>
+          <td>Flower</td>
+          <td>High engagement</td>
+          <td>400+</td>
+          <td class="price-tag">~$20.99</td>
+        </tr>
+        <tr>
+          <td><strong>Dual Chamber Disposable</strong></td>
+          <td>Palmetto</td>
+          <td>Vape</td>
+          <td>8/10 (Reddit)</td>
+          <td>Emerging</td>
+          <td class="price-tag">~$39.99</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 6 ===== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">6</div>
+      <div class="section-title">Business Analytics Summary</div>
+    </div>
+
+    <h2>Products Carried Across Most/All Burlington Stores</h2>
+    <p>The following products appear consistently across nearly all Burlington-area stores, based on OCS wholesale availability and multi-platform cross-referencing. These are the core "baseline inventory" that any competitive store must stock:</p>
+
+    <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Product / Brand</th>
+          <th>Category</th>
+          <th>Ubiquity</th>
+          <th>Price Sensitivity</th>
+          <th>Velocity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Pure Sunfarms Pink Kush (3.5g, 7g, 28g)</strong></td>
+          <td>Flower</td>
+          <td>★★★★★</td>
+          <td>High</td>
+          <td>Very High</td>
+        </tr>
+        <tr>
+          <td><strong>Spinach GMO Cookies (3.5g, 7g, 28g)</strong></td>
+          <td>Flower</td>
+          <td>★★★★★</td>
+          <td>High</td>
+          <td>Very High</td>
+        </tr>
+        <tr>
+          <td><strong>SHRED Gnarberry / Tropic Thunder (7g milled)</strong></td>
+          <td>Flower (Milled)</td>
+          <td>★★★★★</td>
+          <td>Very High</td>
+          <td>High</td>
+        </tr>
+        <tr>
+          <td><strong>Good Supply / Redecan (various)</strong></td>
+          <td>Flower</td>
+          <td>★★★★☆</td>
+          <td>High</td>
+          <td>High</td>
+        </tr>
+        <tr>
+          <td><strong>Spinach Sourz Gummies</strong></td>
+          <td>Edibles</td>
+          <td>★★★★★</td>
+          <td>Medium</td>
+          <td>Very High</td>
+        </tr>
+        <tr>
+          <td><strong>WYLD Gummies</strong></td>
+          <td>Edibles</td>
+          <td>★★★★☆</td>
+          <td>Low-Medium</td>
+          <td>High</td>
+        </tr>
+        <tr>
+          <td><strong>General Admission Infused Pre-Rolls</strong></td>
+          <td>Pre-Rolls (Infused)</td>
+          <td>★★★★★</td>
+          <td>Medium</td>
+          <td>Very High</td>
+        </tr>
+        <tr>
+          <td><strong>Back Forty 510 Carts</strong></td>
+          <td>Vapes</td>
+          <td>★★★★★</td>
+          <td>Medium</td>
+          <td>Very High</td>
+        </tr>
+        <tr>
+          <td><strong>BOXHOT Disposable Vapes</strong></td>
+          <td>Vapes</td>
+          <td>★★★★☆</td>
+          <td>Low-Medium</td>
+          <td>High</td>
+        </tr>
+        <tr>
+          <td><strong>Super Toast (milled, pre-rolls)</strong></td>
+          <td>Flower / Pre-Rolls</td>
+          <td>★★★★☆</td>
+          <td>High</td>
+          <td>High</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2>Sales Velocity &amp; Sell-Through Potential by Category</h2>
+    <div style="margin-bottom: 20px;">
+      <div class="trend-row"><div class="trend-label">Pre-Rolls</div><div class="trend-bar-wrap"><div class="trend-bar" style="width:98%"></div></div><div class="trend-pct">35%</div></div>
+      <div class="trend-row"><div class="trend-label">Dried Flower</div><div class="trend-bar-wrap"><div class="trend-bar" style="width:95%"></div></div><div class="trend-pct">34%</div></div>
+      <div class="trend-row"><div class="trend-label">Vapes</div><div class="trend-bar-wrap"><div class="trend-bar" style="width:72%"></div></div><div class="trend-pct">18%</div></div>
+      <div class="trend-row"><div class="trend-label">Edibles</div><div class="trend-bar-wrap"><div class="trend-bar" style="width:42%"></div></div><div class="trend-pct">8%</div></div>
+      <div class="trend-row"><div class="trend-label">Extracts/Concentrates</div><div class="trend-bar-wrap"><div class="trend-bar" style="width:18%"></div></div><div class="trend-pct">3%</div></div>
+      <div class="trend-row"><div class="trend-label">Beverages (Emerging)</div><div class="trend-bar-wrap"><div class="trend-bar" style="width:8%"></div></div><div class="trend-pct">1–2%</div></div>
+    </div>
+    <p style="font-size:11px; color:#888;">Source: Ontario 2024 category data (OCS), Aug 2025 POS data (~$201M total Ontario monthly sales). Pre-rolls and flower are essentially co-leaders by revenue dollars.</p>
+
+    <h2>Price Change Frequency</h2>
+    <p>Based on OCS pricing data and HiBuddy tracking:</p>
+    <ul>
+      <li><strong>Commodity Flower (SHRED, Pure Sunfarms, Spinach):</strong> OCS wholesale price changes roughly every 30–60 days. Retailers adjust within 1–2 weeks. Prices have trended downward 10–20% over 2023–2025.</li>
+      <li><strong>Premium/Craft Flower (Carmel, 1964, Tribal):</strong> Prices are more stable; changes less frequent (quarterly or less).</li>
+      <li><strong>Pre-Rolls:</strong> Weekly retail promotions common. Underlying wholesale prices change monthly.</li>
+      <li><strong>Vapes:</strong> Pricing fairly stable at wholesale; retail promotions tied to new product launches.</li>
+      <li><strong>Edibles:</strong> Most stable category; gummies rarely discounted except in clearance events.</li>
+    </ul>
+  </div>
+
+  <!-- ===== SECTION 7 ===== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">7</div>
+      <div class="section-title">Upcoming OCS Products &amp; Trends (Q1 2026)</div>
+    </div>
+
+    <p>The OCS publishes a monthly "Coming Soon" product blog. Below are the key launches and trends from January–March 2026 that will be landing in Burlington stores.</p>
+
+    <h2>March 2026 OCS New Launches</h2>
+    <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Product Description</th>
+          <th>Category</th>
+          <th>Format</th>
+          <th>Key Features</th>
+          <th>Market Signal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>THC + Caffeine Fast-Acting Beverage</strong></td>
+          <td>Beverage</td>
+          <td>355mL drink</td>
+          <td>10mg THC + 30mg caffeine; cherry/citrus; SōRSE emulsion; no cannabis smell/taste</td>
+          <td><span class="tag tag-new">Trend Alert</span></td>
+        </tr>
+        <tr>
+          <td><strong>Sativa Sugar Wax</strong></td>
+          <td>Concentrate</td>
+          <td>Sugar wax (dab)</td>
+          <td>Crystalline concentrate; premium whole flower origin; versatile use</td>
+          <td><span class="tag tag-new">Craft Segment</span></td>
+        </tr>
+        <tr>
+          <td><strong>Pink Kush Live Resin Concentrate</strong></td>
+          <td>Concentrate</td>
+          <td>Live resin</td>
+          <td>Full-spectrum Pink Kush pheno; indica; potent essence</td>
+          <td><span class="tag tag-hot">High Demand Brand</span></td>
+        </tr>
+        <tr>
+          <td><strong>THC+CBD+CBC Gummies (10 x 10mg each)</strong></td>
+          <td>Edibles</td>
+          <td>Sugar-coated gummies</td>
+          <td>10mg THC + 10mg CBD + 20mg CBC per piece; unique multi-cannabinoid</td>
+          <td><span class="tag tag-new">Innovation</span></td>
+        </tr>
+        <tr>
+          <td><strong>Afghan Double Black Hash Infused Pre-Roll</strong></td>
+          <td>Pre-Roll (Infused)</td>
+          <td>Infused joints</td>
+          <td>Premium-cured flower + Afghan Double Black hash; Gas brand</td>
+          <td><span class="tag tag-hot">Premium Demand</span></td>
+        </tr>
+        <tr>
+          <td><strong>Transdermal THC:CBD Spray (1mg:1mg)</strong></td>
+          <td>Topical</td>
+          <td>Spray</td>
+          <td>Pharmaceutical-grade delivery; botanical terpenes; no oily residue</td>
+          <td><span class="tag tag-new">Wellness Segment</span></td>
+        </tr>
+        <tr>
+          <td><strong>7g Craft Sativa (Vanilla/Citrus)</strong></td>
+          <td>Flower</td>
+          <td>7g pouch</td>
+          <td>Sativa-dominant; vanilla + citrus + earthy; hand-crafted</td>
+          <td><span class="tag tag-new">Craft</span></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2>February 2026 Launches (Now In-Store)</h2>
+    <ul>
+      <li><strong>Large-Format Rechargeable Vape (900mg THC+CBG+CBD):</strong> USB-C rechargeable all-in-one, variable temperature. Premium positioning.</li>
+      <li><strong>Live Rosin Softgels (Simply Bare organic):</strong> 10mg THC per capsule, organic hemp seed oil. Wellness/medical crossover appeal.</li>
+      <li><strong>Diamond-Infused Mint Pre-Rolls:</strong> BHO-extracted diamonds + mint botanical terpenes. Value multi-pack format.</li>
+    </ul>
+
+    <h2>January 2026 Launches (In-Store Now)</h2>
+    <ul>
+      <li><strong>Cherry-Flavoured THC Fast-Acting Tabs (Diamonds):</strong> Breakable 10mg tabs (splittable to 5mg). Strong early sell-through.</li>
+      <li><strong>Triple-Berry 510 Vape Cart:</strong> Blueberry/raspberry/blackberry botanical terpenes; triple-distilled distillate.</li>
+      <li><strong>Clickstix Modular Snap-Together Vape:</strong> Mix-and-match flavour system. Innovative format — watch for strong initial velocity.</li>
+      <li><strong>Solventless Live Rosin (Ice Water Hash):</strong> Flash-frozen flower; full-spectrum; premium concentrate segment.</li>
+    </ul>
+
+    <div class="info-box">
+      <strong>Strategic Observation:</strong> The OCS is clearly pushing three trend vectors for 2026: (1) functional beverages combining THC with caffeine or wellness ingredients, (2) multi-cannabinoid products (CBD+CBC+THC combinations), and (3) premium/solventless concentrates (live rosin, ice water hash). These are not yet high-volume but carry above-average margin and strong differentiation potential for any retailer who positions early.
+    </div>
+  </div>
+
+  <!-- ===== SECTION 8 ===== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">8</div>
+      <div class="section-title">Reddit &amp; Community Sentiment</div>
+    </div>
+
+    <p>Reddit communities r/TheOCS, r/Canadients, and r/OnCP are the primary sources of unfiltered consumer product sentiment in Ontario. BudTrendz.com aggregates these signals using AI-powered sentiment scoring. Key observations:</p>
+
+    <h2>Most Positive Reddit Sentiment (2025–2026)</h2>
+    <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Brand</th>
+          <th>Reddit Trend Score</th>
+          <th>Typical Review Sentiment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Animal Face</strong></td>
+          <td>Carmel Cannabis</td>
+          <td>Consistently top sativa</td>
+          <td>"Best sativa in Ontario. Lemon cake + gasoline." High energy, low anxiety.</td>
+        </tr>
+        <tr>
+          <td><strong>Woody Nelson Country Club / Crunch-Berries</strong></td>
+          <td>Sweetgrass Organic</td>
+          <td>Top-rated craft, recurring</td>
+          <td>"Strong fresh smell, clean high, smooth burn." 9.5/10 scored.</td>
+        </tr>
+        <tr>
+          <td><strong>Pink Kush (28g)</strong></td>
+          <td>Pure Sunfarms</td>
+          <td>High volume; mixed quality discourse</td>
+          <td>Strong potency; "inconsistent and sometimes wet." Value for money emphasized.</td>
+        </tr>
+        <tr>
+          <td><strong>Big Smallz</strong></td>
+          <td>Tenzo</td>
+          <td>Rising trend</td>
+          <td>Very positive. "Great value for the price." 4.1/5 on HiBuddy (41 reviews).</td>
+        </tr>
+        <tr>
+          <td><strong>Tribal Neon Sunshine Live Resin Cart</strong></td>
+          <td>Tribal</td>
+          <td>Feb 2026 — positive launch</td>
+          <td>Positive; flavour and full-spectrum effects praised.</td>
+        </tr>
+        <tr>
+          <td><strong>Palmetto Dual Chamber Disposable</strong></td>
+          <td>Palmetto</td>
+          <td>Surprise performer (Dec 2025)</td>
+          <td>"Surprised by quality." 8/10. Mix-and-match chambers appreciated.</td>
+        </tr>
+        <tr>
+          <td><strong>Liquid Imagination (28g)</strong></td>
+          <td>BULK</td>
+          <td>Consistent B-tier</td>
+          <td>"Fruity, creamy, burns clean for a budget ounce."</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h2>Consumer Insights from Reddit</h2>
+    <ul>
+      <li><strong>Price vs. Quality Tension:</strong> Ontario consumers are acutely price-sensitive due to years of price compression, but a growing segment actively seeks craft/premium products and will pay a premium for provenance and terpene quality.</li>
+      <li><strong>Quality Control Complaints:</strong> Pure Sunfarms Pink Kush frequently flagged for moisture inconsistency. Brands that maintain consistent quality earn strong loyalty.</li>
+      <li><strong>Format Innovation Excitement:</strong> Modular vapes (Clickstix), multi-cannabinoid edibles, and functional beverages generate significant positive buzz out of the gate.</li>
+      <li><strong>Staff Knowledge Valued:</strong> Multiple Burlington-area store reviews highlight staff knowledge and approachability as a key differentiator for independent stores vs. chains.</li>
+      <li><strong>Budtender Trust:</strong> Carmel Cannabis (Animal Face) stays perennially popular largely due to budtender recommendations — the budtender-to-consumer recommendation funnel is powerful.</li>
+    </ul>
+  </div>
+
+  <!-- ===== SECTION 9 ===== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">9</div>
+      <div class="section-title">Strategic Recommendations for MontKailash Cannabis</div>
+    </div>
+
+    <div class="rec-block">
+      <div class="rec-title">1. Location Strategy — Target the Oakville Demand Gap</div>
+      <p>Position MontKailash in Burlington's southern end (Lakeshore, Fairview, or New St corridor). Oakville has zero licensed cannabis stores. Burlington south-end stores already capture this spillover. A well-positioned, premium-branded store here can serve both Burlington residents and Oakville crossover traffic — a structural advantage with no licensing competition from Oakville itself.</p>
+    </div>
+
+    <div class="rec-block">
+      <div class="rec-title">2. Product Mix — Lead with Velocity, Differentiate with Craft</div>
+      <p>Stock all baseline high-velocity SKUs (Pure Sunfarms Pink Kush, Spinach GMO Cookies, SHRED Gnarberry, General Admission infused pre-rolls, Back Forty vapes, Spinach Sourz gummies) to capture the commodity shopper. Differentiate the brand by curating a premium/craft section featuring Carmel Cannabis Animal Face, 1964 Organic, Sweetgrass Woody Nelson, and Tribal live resin — products that drive Reddit buzz and repeat premium customers.</p>
+    </div>
+
+    <div class="rec-block">
+      <div class="rec-title">3. Be First on Trending Formats — Functional Beverages &amp; Multi-Cannabinoid</div>
+      <p>The OCS March 2026 launches around THC+caffeine beverages and multi-cannabinoid (CBC+CBD+THC) edibles represent a first-mover opportunity. Consumers are curious but stores are slow to highlight these new formats. MontKailash can build a reputation as the "innovation destination" by prominently featuring new OCS arrivals on a dedicated "New Arrivals" wall or feature table.</p>
+    </div>
+
+    <div class="rec-block">
+      <div class="rec-title">4. Promotions — Structured Loyalty Over Blanket Discounts</div>
+      <p>Avoid competing on blanket price cuts (a losing game against Canna Cabana's scale). Instead, implement a structured loyalty program (points per dollar), category-specific weekly deals (e.g., "Vape Tuesdays," "Flower Friday"), and targeted discounts for seniors and first responders. This mirrors successful tactics at PEPE Cannabis and Sweet Releafs and builds a loyal repeat base.</p>
+    </div>
+
+    <div class="rec-block">
+      <div class="rec-title">5. Staff Investment — Budtender Knowledge as a Competitive Moat</div>
+      <p>Reddit and Yelp reviews consistently reward stores where staff are knowledgeable and non-rushed. Brands like Carmel Cannabis (Animal Face) stay dominant partly through budtender advocacy. Invest in staff training (CannSell + brand-led training sessions), hold monthly product knowledge nights, and incentivize budtenders to know the OCS new arrivals each month. This creates a recommendation-led sales culture independent stores can build and chains cannot easily replicate.</p>
+    </div>
+
+    <div class="rec-block">
+      <div class="rec-title">6. Data Collection — Build a Live Intelligence Dashboard</div>
+      <p>For ongoing competitive intelligence, establish a weekly data collection protocol: (a) monitor HiBuddy.ca for Burlington-area price changes, (b) check OCS "Coming Soon" blog monthly, (c) scrape r/TheOCS weekly using BudTrendz or manual review for trending sentiment, and (d) conduct bi-weekly in-person or website menu checks of 5–6 key competitors. A simple spreadsheet-based tracker for these data points, updated weekly by one staff member, is sufficient as an initial system. This report can serve as the template.</p>
+    </div>
+
+    <div class="rec-block">
+      <div class="rec-title">7. Concentrate &amp; Extract Category — Underserved &amp; High-Margin</div>
+      <p>Concentrates represent only ~3% of Ontario sales by volume but carry significantly higher margin. The segment is growing as consumers become more experienced. Stocking a curated concentrate selection (live rosin, sugar wax, ice water hash — all launching via OCS Q1 2026) differentiates MontKailash from corporate chains that under-index in this category, and builds a loyal "craft cannabis" customer base.</p>
+    </div>
+
+    <h2>Competitive Positioning Summary</h2>
+    <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Competitor Type</th>
+          <th>Strength</th>
+          <th>Weakness</th>
+          <th>MontKailash Opportunity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Canna Cabana (Chain)</strong></td>
+          <td>Scale, loyalty program, consistent ops</td>
+          <td>Generic experience; limited craft curation</td>
+          <td>Premium craft + community identity</td>
+        </tr>
+        <tr>
+          <td><strong>One Plant (Chain)</strong></td>
+          <td>Exclusive brands; polished retail</td>
+          <td>Price premium; limited indie feel</td>
+          <td>Comparable selection + warmer experience</td>
+        </tr>
+        <tr>
+          <td><strong>PEPE (Independent)</strong></td>
+          <td>Strong community brand; knowledgeable staff</td>
+          <td>Single location; limited scale</td>
+          <td>Match staff quality; expand on promos</td>
+        </tr>
+        <tr>
+          <td><strong>Hunny Pot (Chain)</strong></td>
+          <td>Large selection; online ordering</td>
+          <td>Impersonal; accessibility issues noted in reviews</td>
+          <td>Inclusive atmosphere; accessible layout</td>
+        </tr>
+        <tr>
+          <td><strong>Spiritleaf (Franchise)</strong></td>
+          <td>Lifestyle branding</td>
+          <td>Franchise consistency issues</td>
+          <td>More agile new product adoption</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  <!-- ===== SECTION 10 ===== -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">10</div>
+      <div class="section-title">Assumptions &amp; Methodology</div>
+    </div>
+
+    <h2>Data Sources Used</h2>
+    <ul>
+      <li><strong>AGCO / Burlington.ca:</strong> Official licensing and application history for store count and municipal framework.</li>
+      <li><strong>OCS.ca:</strong> "Coming Soon" product blog (January–March 2026), wholesale pricing structure, store locator.</li>
+      <li><strong>HiBuddy.ca:</strong> Live price aggregation (queried March 28, 2026); popular products and store count data.</li>
+      <li><strong>Weedmaps.com:</strong> Store directory, operational hours, menu cross-reference.</li>
+      <li><strong>Leafly.ca, Leafythings.com:</strong> Store discovery, review cross-reference.</li>
+      <li><strong>CanadaCannabisbrands.ca, Headset.io:</strong> Ontario category sales data, brand unit rankings.</li>
+      <li><strong>BudTrendz.com:</strong> Reddit sentiment analysis aggregation across r/TheOCS, r/Canadients, r/Canadients.</li>
+      <li><strong>Budderscannabis.ca:</strong> 2026 Ontario strain tier list based on actual POS sales data.</li>
+      <li><strong>High Tide press releases / Public filings:</strong> Canna Cabana Burlington opening confirmation.</li>
+      <li><strong>Store websites (PEPE, Farmhouse, Relm, Burlington Cannabis Co., Sweet Releafs):</strong> Direct store information.</li>
+    </ul>
+
+    <h2>Assumptions Made</h2>
+    <ul>
+      <li>Store count: "20+" Burlington stores based on AGCO application history (20 applications by 2021) plus growth since. Exact current AGCO-authorized count requires direct AGCO Licences database query, which is publicly accessible at agco.ca but requires real-time search.</li>
+      <li>Owner details: Not publicly disclosed for most independent Ontario cannabis stores. Corporate chain ownership confirmed via public filings (High Tide/Canna Cabana, Spiritleaf/Inner Spirit Holdings, One Plant/Westleaf).</li>
+      <li>Phone numbers: Many Ontario cannabis stores do not prominently list phone numbers on their websites or platforms, likely to manage inbound call volume. Confirmed phone numbers are provided where publicly available (PEPE: 905-333-5373).</li>
+      <li>Pricing: Represents typical retail price ranges as observed across HiBuddy, store menus, and OCS-aligned pricing. Actual prices at any given store on a given day may vary by ±10–15%.</li>
+      <li>Sale durations: Based on observed promotional patterns; individual stores vary.</li>
+      <li>35 km radius: Estimated based on Burlington city centre as the anchor point. Cities like Mississauga (central) fall outside 35 km; southern Mississauga (Port Credit) is approximately 33–36 km.</li>
+      <li>HiBuddy data: Queried at the Toronto / 50 km default setting; Burlington stores are within this radius. Product popularity rankings reflect GTA-area demand, not Burlington specifically.</li>
+    </ul>
+
+    <div class="note-box">
+      <strong>For a Production-Grade Daily Intelligence System:</strong> This report represents a snapshot. A live competitive intelligence system would require: (a) automated daily scraping of HiBuddy, Weedmaps, and OCS menus, (b) weekly store visits or phone checks for hours/phone verification, (c) monthly OCS new product blog monitoring, and (d) weekly Reddit subreddit monitoring. The technical exercise demonstrates the framework — the underlying data pipeline can be automated with standard web scraping tools.
+    </div>
+  </div>
+
+</div>
+
+<div class="report-footer">
+  <strong>MontKailash Cannabis — Burlington Market Intelligence Report</strong><br>
+  Prepared March 28, 2026 | Data Sources: OCS, HiBuddy, AGCO, Weedmaps, Leafly, Reddit, CanadaCannabisbrands.ca<br>
+  This report is confidential and intended solely for internal strategic use by MontKailash Cannabis.
+</div>
+
+</body>
+</html>
